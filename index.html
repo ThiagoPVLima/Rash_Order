@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link rel="stylesheet" href="style.css">
+    <title>Pedido No-Gi - Abas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>CTG Store</h1>
+        
+        <form id="pedidoForm">
+            <div class="form-section">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required />
+            </div>
+
+            <!-- Abas de Produtos -->
+            <div class="tab-container">
+                <button type="button" class="tab-btn active" onclick="openTab(event, 'rash-curta')">Manga Curta</button>
+                <button type="button" class="tab-btn" onclick="openTab(event, 'rash-longa')">Manga Longa</button>
+                <button type="button" class="tab-btn" onclick="openTab(event, 'short')">Short</button>
+            </div>
+
+            <!-- Conteúdo da Aba Rash Guard Manga Curta -->
+            <div id="rash-curta" class="tab-content active">
+                <div class="form-group">
+                    <label for="cor-rash-curta">Cor:</label>
+                    <select id="cor-rash-curta" class="cor-select">
+                        <option value="branca">Branca</option>
+                        <option value="cinza">Cinza</option>
+                        <option value="amarela">Amarela</option>
+                        <option value="azul">Azul</option>
+                        <option value="roxa">Roxa</option>
+                        <option value="marrom">Marrom</option>
+                        <option value="preta">Preta</option>
+                    </select>
+                </div>
+
+                <div class="imagem-container" id="imagem-rash-curta-container">
+                    <img id="rash-guard-curta" src="" alt="Rash Guard Manga Curta" class="produto-imagem" />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tamanho-rash-curta">Tamanho:</label>
+                        <select id="tamanho-rash-curta">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade-rash-curta">Quantidade:</label>
+                        <div class="quantidade-wrapper">
+                            <button type="button" class="btn-menor" data-target="quantidade-rash-curta">-</button>
+                            <input
+                                type="number"
+                                id="quantidade-rash-curta"
+                                min="0"
+                                value="0"
+                                class="quantidade-input"
+                                step="1"
+                            />
+                            <button type="button" class="btn-maior" data-target="quantidade-rash-curta">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteúdo da Aba Rash Guard Manga Longa -->
+            <div id="rash-longa" class="tab-content">
+                <div class="form-group">
+                    <label for="cor-rash-longa">Cor:</label>
+                    <select id="cor-rash-longa" class="cor-select">
+                        <option value="branca">Branca</option>
+                        <option value="cinza">Cinza</option>
+                        <option value="amarela">Amarela</option>
+                        <option value="azul">Azul</option>
+                        <option value="roxa">Roxa</option>
+                        <option value="marrom">Marrom</option>
+                        <option value="preta">Preta</option>
+                    </select>
+                </div>
+
+                <div class="imagem-container" id="imagem-rash-longa-container">
+                    <img id="rash-guard-longa" src="" alt="Rash Guard Manga Longa" class="produto-imagem" />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tamanho-rash-longa">Tamanho:</label>
+                        <select id="tamanho-rash-longa">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade-rash-longa">Quantidade:</label>
+                        <div class="quantidade-wrapper">
+                            <button type="button" class="btn-menor" data-target="quantidade-rash-longa">-</button>
+                            <input
+                                type="number"
+                                id="quantidade-rash-longa"
+                                min="0"
+                                value="0"
+                                class="quantidade-input"
+                                step="1"
+                            />
+                            <button type="button" class="btn-maior" data-target="quantidade-rash-longa">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteúdo da Aba Short -->
+            <div id="short" class="tab-content">
+                <div class="form-group">
+                    <label for="cor-short">Cor:</label>
+                    <select id="cor-short" class="cor-select">
+                        <option value="branca">Branca</option>
+                        <option value="cinza">Cinza</option>
+                        <option value="amarela">Amarela</option>
+                        <option value="azul">Azul</option>
+                        <option value="roxa">Roxa</option>
+                        <option value="marrom">Marrom</option>
+                        <option value="preta">Preta</option>
+                    </select>
+                </div>
+
+                <div class="imagem-container">
+                    <img id="short-guard" src="" alt="Short" class="produto-imagem" />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tamanho-short">Tamanho:</label>
+                        <select id="tamanho-short">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade-short">Quantidade:</label>
+                        <div class="quantidade-wrapper">
+                            <button type="button" class="btn-menor" data-target="quantidade-short">-</button>
+                            <input
+                                type="number"
+                                id="quantidade-short"
+                                min="0"
+                                value="0"
+                                class="quantidade-input"
+                                step="1"
+                            />
+                            <button type="button" class="btn-maior" data-target="quantidade-short">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Pagamento -->
+            <div class="tab-content" style="display: block;">
+                <h2>Forma de Pagamento</h2>
+                
+                <div class="form-group">
+                    <label for="forma-pagamento">Método:</label>
+                    <select id="forma-pagamento">
+                        <option value="pix">PIX</option>
+                        <option value="credito">Cartão de Crédito</option>
+                        <option value="debito">Cartão de Débito</option>
+                        <option value="dinheiro">Dinheiro</option>
+                    </select>
+                </div>
+
+                <div id="parcelamento-container" style="display: none;">
+                    <div class="form-group">
+                        <label for="parcelas">Parcelas:</label>
+                        <select id="parcelas">
+                            <option value="1">1x</option>
+                            <option value="2">2x</option>
+                            <option value="3">3x</option>
+                            <option value="4">4x</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumo do Pedido -->
+            <div class="tab-content resumo-pedido" style="display: block;">
+                <h2>Resumo do Pedido</h2>
+                <div id="resumo-itens"></div>
+                <div class="total-pedido">
+                    <strong>Total: R$ <span id="total-pedido">0,00</span></strong>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Pedido</button>
+        </form>
+    </div>
+    <script src= "script.js"></script>
+</body>
+</html>
